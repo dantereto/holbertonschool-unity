@@ -214,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1284232079
 GameObject:
@@ -392,7 +392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1916203587
 PrefabInstance:
@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6855125200887903351, guid: 4fd901611b646ba40b1f4a59080a0627, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fd901611b646ba40b1f4a59080a0627, type: 3}
 --- !u!1001 &4282315175582197784
@@ -567,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 5748060100737345655, guid: d17690ad013c828458dac5b8ac92d14c, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d17690ad013c828458dac5b8ac92d14c, type: 3}
 --- !u!1001 &4432133819127802081
@@ -576,6 +584,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1702822763524513198, guid: b8b2ccf71926fda429ec84f06f71918d, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 4432133819452701124, guid: b8b2ccf71926fda429ec84f06f71918d, type: 3}
       propertyPath: m_Name
       value: Green Ball
@@ -681,6 +693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 8056346197316222783, guid: fc211733157cbb149831ff9b780402f1, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc211733157cbb149831ff9b780402f1, type: 3}
 --- !u!1001 &7789219735227144296
@@ -690,6 +706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4422377225191676980, guid: 939989259b62b53449c431e53635a6b6, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 8767307326997880384, guid: 939989259b62b53449c431e53635a6b6, type: 3}
       propertyPath: m_RootOrder
       value: 5
