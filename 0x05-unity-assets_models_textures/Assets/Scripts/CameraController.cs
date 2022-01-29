@@ -1,19 +1,21 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     public float mouseSensitivity = 5f;
-    public Vector2 mouse;
     public Transform player;
     public Vector3 offset;
+    void Start() {
+        offset = transform.position -player.position;
+    }
     // Update is called once per frame
     void Update()
     {
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * mouseSensitivity, Vector3.up) * offset;
         transform.position = player.position + offset;
-        mouse.x += Input.GetAxis("Mouse X");
-        mouse.y += Input.GetAxis("Mouse Y");
-        transform.rotation = Quaternion.Euler(-mouse.y, mouse.x, 0);
+        transform.LookAt(player.position);
+        player.Rotate(Input.GetAxis("Mouse X") * mouseSensitivity * Vector3.up);
     }
 }

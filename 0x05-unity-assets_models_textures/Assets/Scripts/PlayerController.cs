@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float hold;
     private bool is_ground = true;
     public float speed = 2.1f;
-    public Vector3 velocity;
+    private Vector3 velocity = Vector3.zero;
     public CharacterController charc;
     private float gravity = -9.8f;
     public float max_jump = 2f;
@@ -22,7 +21,7 @@ public class PlayerController : MonoBehaviour
         is_ground = charc.isGrounded;
         float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
-        Vector3 move = new Vector3(xDirection, 0.0f, yDirection);
+        Vector3 move = transform.right * xDirection + transform.forward * yDirection;
         charc.Move(move * speed * Time.deltaTime);
         if (Input.GetKey(KeyCode.Space) && is_ground)
         {
@@ -36,3 +35,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+     
