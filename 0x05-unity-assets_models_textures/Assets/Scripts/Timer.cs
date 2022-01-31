@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    private bool stop = false;
     public Text TimerText;
-    private float startT;
+    private float totalT = 0f;
     // Start is called before the first frame update
 
     // Update is called once per frame
-    void Update()
+    public void Stop() 
     {
-        this.TimerText.text = string.Format("{0}:{1:00.00}",
-        Mathf.RoundToInt(Time.time / 60), Time.time % 60
-        );
+        this.stop = true;
+        this.TimerText.color = Color.green;
+        this.TimerText.fontSize = 60;
+    }
+    void Update() {
+        if (this.stop == false)
+            totalT += Time.deltaTime;
+            TimerText.text = $"{(int)totalT / 60}:{(totalT % 60).ToString("00.00")}";
     }
 }
