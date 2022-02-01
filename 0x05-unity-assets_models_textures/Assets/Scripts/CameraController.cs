@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * mouseSensitivity, Vector3.up) * offset;
+        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * mouseSensitivity, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * mouseSensitivity, Vector3.left) * offset;
         transform.position = player.position + offset;
         transform.LookAt(player.position);
         player.Rotate(Input.GetAxis("Mouse X") * mouseSensitivity * Vector3.up);
