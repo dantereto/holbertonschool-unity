@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
     }
     void Update() {
         if (this.stop == false)
+            this.TimerText.color = Color.white;
             totalT += Time.deltaTime;
             TimerText.text = $"{(int)totalT / 60}:{(totalT % 60).ToString("00.00")}";
     }
