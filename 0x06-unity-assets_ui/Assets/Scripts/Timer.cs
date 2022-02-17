@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     private bool stop = false;
     public Text TimerText;
+    public Text WinText;
     private float totalT = 0f;
     // Start is called before the first frame update
 
@@ -16,6 +17,11 @@ public class Timer : MonoBehaviour
         this.stop = true;
         this.TimerText.color = Color.green;
         this.TimerText.fontSize = 60;
+    }
+    public void Win()
+    {
+        WinText.text = TimerText.text;
+        TimerText.text = "";
     }
     void Update() {
         if (this.stop == false)
