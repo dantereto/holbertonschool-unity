@@ -27,10 +27,10 @@ public class OptionsMenu : MonoBehaviour
             PlayerPrefs.SetInt("Inverted", 1);
         else
             PlayerPrefs.SetInt("Inverted", 0);
-        SceneManager.LoadScene(PlayerPrefs.GetInt("LastScene"));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
     public void Back()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("LastScene"));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
