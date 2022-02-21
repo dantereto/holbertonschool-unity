@@ -1357,9 +1357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee7dafa8bcb3f14ebd5944a0bb2f804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 5
   player: {fileID: 1217061947}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: -5, z: 0}
   isInverted: 0
 --- !u!4 &438650031 stripped
 Transform:

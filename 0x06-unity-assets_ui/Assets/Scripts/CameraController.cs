@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
-    public float mouseSensitivity = 5f;
+    public float mouseSensitivity = 2f;
     public Transform player;
     public Vector3 offset;
     public bool isInverted = false;

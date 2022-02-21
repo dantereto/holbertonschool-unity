@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b3275ead9c846469d7bb35098ede02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInverted: {fileID: 513399940}
+  invertedMode: {fileID: 513399940}
 --- !u!4 &1008070181
 Transform:
   m_ObjectHideFlags: 0
