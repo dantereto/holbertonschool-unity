@@ -10,8 +10,9 @@ public class PlayerController : MonoBehaviour
     public CharacterController charc;
     private float gravity = -9.8f;
     public float max_jump = 2f;
+    public Animator anim;
     // Update is called once per frame
-    void Start() {  
+    void Start() {
     }
     void Update()
     {
@@ -20,11 +21,18 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = 0f;
         }
+        else
         is_ground = charc.isGrounded;
         float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * xDirection + transform.forward * yDirection;
+        float dist = speed * Time.deltaTime;
+        Vector3 move = (transform.right * xDirection + transform.forward * yDirection);
         charc.Move(move * speed * Time.deltaTime);
+        float temp = (Mathf.Max(move.x, move.y, move.z));
+        if (temp != 0)
+            anim.SetBool("running", true);
+        else
+            anim.SetBool("running", false);
         if (Input.GetKey(KeyCode.Space) && is_ground)
         {
             velocity.y += Mathf.Sqrt(max_jump * -2f * gravity);

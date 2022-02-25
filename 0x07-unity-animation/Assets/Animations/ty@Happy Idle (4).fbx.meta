@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 1ed086ed7230f6748b1230d92012dd36
+guid: 32295f65dde779548ae15910c238f753
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: 'Happy Idle '
+    second: Happy Idle (4)
+  - first:
+      74: -7785832506187429090
+    second: Happy Idle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,7 +38,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: 'Happy Idle '
+      name: Happy Idle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
@@ -526,13 +529,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: ty@Happy Idle (Clone)
+    - name: ty@Happy Idle (4)(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Boy:Hips
-      parentName: ty@Happy Idle (Clone)
+      parentName: ty@Happy Idle (4)(Clone)
       position: {x: -0.001612996, y: 0.84209794, z: 0.005100874}
       rotation: {x: -0.008670821, y: -0.041536972, z: 0.011332666, w: 0.99903506}
       scale: {x: 1, y: 1, z: 1}
