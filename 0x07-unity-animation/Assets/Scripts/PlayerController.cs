@@ -36,7 +36,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && is_ground)
         {
             velocity.y += Mathf.Sqrt(max_jump * -2f * gravity);
+            anim.SetBool("jumping", true);
         }
+        else
+            anim.SetBool("jumping", false);
         velocity.y += gravity * Time.deltaTime;
         charc.Move(velocity * Time.deltaTime);
         if (transform.position.y < -30)
