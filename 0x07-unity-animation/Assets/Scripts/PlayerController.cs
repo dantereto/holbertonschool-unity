@@ -44,7 +44,10 @@ public class PlayerController : MonoBehaviour
         charc.Move(velocity * Time.deltaTime);
         if (transform.position.y < -30)
         {
-            transform.position = new Vector3 (0, 30, 0);
+            anim.SetBool("falling", true);
+            transform.position = new Vector3 (0, 50, 0);
+            if (anim.GetBool("falling") == false)
+                anim.SetBool("falling", false);
         }
     }
 }
