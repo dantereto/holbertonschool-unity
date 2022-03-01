@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < -30)
         {
             anim.SetBool("falling", true);
-            transform.position = new Vector3 (0, 50, 0);
+            transform.position = new Vector3 (0, 80, 0);
             if (anim.GetBool("falling") == false)
                 anim.SetBool("falling", false);
         }
