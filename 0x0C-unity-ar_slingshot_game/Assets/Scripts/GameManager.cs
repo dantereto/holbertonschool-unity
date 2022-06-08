@@ -1,68 +1,52 @@
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Canvas1;
-    ARPlaneManager planeManager;
-    ARRaycastManager raycastManager;
-    ARPlane selectedPlane = null; 
-    List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    public delegate void PlaneSelectedEventHandler(ARPlane thePlane);
-    public event PlaneSelectedEventHandler OnPlaneSelected;
-    void Start()
-    {
-        raycastManager = FindObjectOfType<ARRaycastManager>();
-        planeManager = FindObjectOfType<ARPlaneManager>();
-        planeManager.planesChanged += PlanesFound;
-    }
-
+    public ARPlaneManager arPlaneManager;
+    public ARRaycastManager arRaycastManager;
+    public EnemyManager enemyManager;
+    public UIManager uiManager;
+    public ARPlane plane = null;
+    private List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
+    private List<ARPlane> planes = new List<ARPlane>();
+    private bool planeSelected = false;
+    
     void Update()
     {
-        if (Input.touchCount > 0 && planeManager.trackables.count > 0)
-        {
-            SelectPlane();
-            Canvas1.SetActive(false);
-        }
-    }
-    private void SelectPlane()
-    {
-         Touch touch = Input.GetTouch(0);
-        
+        if (planeSelected)
+            return;
 
-        if (touch.phase == TouchPhase.Began)
+        if (Input.touchCount <= 0)
+            return;
+
+        Touch touch = Input.GetTouch(0);
+        if (arRaycastManager.Raycast(touch.position, m_Hits))
         {
-            if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+            ARRaycastHit hit = m_Hits[0];
+            if ((hit.hitType & TrackableType.PlaneWithinPolygon) != 0)
             {
-                ARRaycastHit hit = hits[0];
-                selectedPlane =  planeManager.GetPlane(hit.trackableId);
-                // selectedPlane.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0);
-                selectedPlane.GetComponent<MeshRenderer>().enabled = false;
-                selectedPlane.GetComponent<LineRenderer>().positionCount = 0;
-                selectedPlane.gameObject.layer = LayerMask.NameToLayer("Default");
-                // selectedPlane.GetComponent<Renderer>().sortingOrder = 0;
-                foreach(ARPlane plane in planeManager.trackables)
+                plane = arPlaneManager.GetPlane(hit.trackableId);
+
+                foreach (ARPlane onPlane in arPlaneManager.trackables)
                 {
-                    if (plane != selectedPlane)
+                    if (onPlane != plane)
                     {
-                        plane.gameObject.SetActive(false);
+                        onPlane.gameObject.SetActive(false);
                     }
                 }
-                planeManager.enabled = false;
+
+                planeSelected = true;
+                LineRenderer lineRenderer = plane.gameObject.GetComponent<LineRenderer>();
+                lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+                lineRenderer.startColor = Color.red;
+                lineRenderer.endColor = Color.red;
+                arPlaneManager.enabled = false;
+                uiManager.PlaneSelected(plane);
             }
-        }
-    }
-    void PlanesFound(ARPlanesChangedEventArgs args)
-    {
-        if (selectedPlane == null && planeManager.trackables.count > 0)
-        {
-            planeManager.planesChanged -= PlanesFound;
         }
     }
 }
