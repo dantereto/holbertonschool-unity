@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: glow
-  m_Shader: {fileID: -6465566751694194690, guid: e6e7f98939b1b4d468d821a710f4a833, type: 3}
+  m_Name: glow_animated
+  m_Shader: {fileID: -6465566751694194690, guid: a4009513deb14ad418b279c81cc378a4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -103,15 +103,17 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_10069d7a9b4c490ea8b5cf530a3d0bc6: {r: 0.9339623, g: 0.772808, b: 0, a: 0}
-    - Color_52fc4ce968494c4589c8c05c2b33e06c: {r: 1, g: 0, b: 0, a: 0}
-    - Vector2_560a42be007b4c0f90327664fbec2d8d: {r: 1.07, g: -1.23, b: 0, a: 0}
+    - Color_9d8294a556914b0a94977d6bd8956d12: {r: 0, g: 1, b: 0.3347352, a: 0}
+    - Vector2_41084d8a515d4c55a20357b0cbd25a3e: {r: -1, g: 1, b: 0, a: 0}
+    - Vector2_64cac3b75c464165b4b6fe17930488ca: {r: 0, g: 1, b: 0, a: 0}
+    - Vector2_712e7d56b6dc4bd0af32bf59a1136fdd: {r: 3, g: 0, b: 0, a: 0}
+    - Vector2_c590b7181c5748f89e6c0524574dc3cd: {r: 1.42, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &5089514373146022098
+--- !u!114 &4732738216518391841
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
