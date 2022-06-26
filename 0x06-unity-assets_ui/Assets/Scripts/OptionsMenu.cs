@@ -17,7 +17,7 @@ public class OptionsMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-
+    // make the changes
     public void Apply()
     {
         if (invertedMode.isOn == true)
