@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     private float totalT = 0f;
     // Start is called before the first frame update
 
-    // Update is called once per frame
+    // Stop the time
     public void Stop() 
     {
         this.stop = true;
