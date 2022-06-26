@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     {
         
     }
+    // start the scene of the maze to play
     public void PlayMaze()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
