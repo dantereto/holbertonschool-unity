@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
-{
+{https://github.com/dantereto/holbertonschool-unity/blob/main/0x06-unity-assets_ui/Assets/Scripts/OptionsMenu.cs
     public Toggle invertedMode;
     void Start()
     {
@@ -12,7 +12,7 @@ public class OptionsMenu : MonoBehaviour
         else
             invertedMode.isOn = false;
     }
-
+    //  Go back
     public void Back()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
