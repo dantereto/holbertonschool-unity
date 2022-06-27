@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour
         this.TimerText.fontSize = 60;
         Win();
     }
+    // Win screen
     public void Win()
     {
         WinText.text = TimerText.text;
