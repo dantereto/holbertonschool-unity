@@ -12,12 +12,12 @@ public class OptionsMenu : MonoBehaviour
         else
             invertedMode.isOn = false;
     }
-
+    // Go back scene
     public void Back()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
-
+    // Apply changes
     public void Apply()
     {
         if (invertedMode.isOn == true)
