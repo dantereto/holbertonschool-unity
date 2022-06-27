@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     {
         
     }
+    // Select the level
     public void LevelSelect(int level)
     {
         if (level == 1)
@@ -35,10 +36,12 @@ public class MainMenu : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+    // Options menu
     public void Options(string level)
     {
         SceneManager.LoadScene("Options");
     }
+    // Exit button
     public void ExitButton()
     {
         Application.Quit();
