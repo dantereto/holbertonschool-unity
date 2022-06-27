@@ -18,11 +18,13 @@ public class WinMenu : MonoBehaviour
     {
         
     }
+    // Main menu
     public void MainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
+    // Go next level
     public void Next()
     {
         Time.timeScale = 1f;
