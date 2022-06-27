@@ -28,27 +28,32 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+    // Pause game
     public void Pause()
     {
         Canvas.SetActive(true);
         Time.timeScale = 0;
     }
+    // Resume game
     public void Resume()
     {
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
+    // Restart game
     public void Restart()
     {
         var level = SceneManager.GetActiveScene().name;
         Time.timeScale = 1;
         SceneManager.LoadScene(level);
     }
+    // Main menu
     public void MainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
+    // Options menu
     public void Options()
     {
         Time.timeScale = 1;
