@@ -10,9 +10,8 @@ public class Timer : MonoBehaviour
     public Text WinText;
     private float totalT = 0f;
     public GameObject Canvas;
-    // Start is called before the first frame update
 
-    // Update is called once per frame
+    // Stop game
     public void Stop() 
     {
         this.stop = true;
@@ -20,12 +19,14 @@ public class Timer : MonoBehaviour
         this.TimerText.fontSize = 60;
         Win();
     }
+    // Win menu
     public void Win()
     {
         WinText.text = TimerText.text;
         TimerText.text = "";
         Canvas.SetActive(false);
     }
+    // Start is called before the first frame update
     void Update() {
         if (this.stop == false)
             totalT += Time.deltaTime;
